@@ -231,6 +231,10 @@
     <Compile Include="DataContext\Migrations\201612050435447_Initial4.Designer.cs">
       <DependentUpon>201612050435447_Initial4.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContext\Migrations\201612050723571_Initial5.cs" />
+    <Compile Include="DataContext\Migrations\201612050723571_Initial5.Designer.cs">
+      <DependentUpon>201612050723571_Initial5.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContext\Migrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -602,12 +606,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Models\attractions.csv" />
-    <Content Include="Models\events.csv" />
-    <Content Include="Models\movies.csv" />
-    <Content Include="Models\restaurants.csv" />
-    <Content Include="Models\Zip.csv" />
-    <Content Include="Models\Zipcode.csv" />
     <Content Include="Content\kendo\2016.1.112\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <Content Include="Content\kendo\2016.1.112\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
     <Content Include="Content\kendo\2016.1.112\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
@@ -1044,6 +1042,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContext\Migrations\201612050435447_Initial4.resx">
       <DependentUpon>201612050435447_Initial4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContext\Migrations\201612050723571_Initial5.resx">
+      <DependentUpon>201612050723571_Initial5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
