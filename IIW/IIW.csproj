@@ -227,6 +227,10 @@
     <Compile Include="DataContext\Migrations\201612050423553_Initial3.Designer.cs">
       <DependentUpon>201612050423553_Initial3.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContext\Migrations\201612050435447_Initial4.cs" />
+    <Compile Include="DataContext\Migrations\201612050435447_Initial4.Designer.cs">
+      <DependentUpon>201612050435447_Initial4.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContext\Migrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1037,6 +1041,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContext\Migrations\201612050423553_Initial3.resx">
       <DependentUpon>201612050423553_Initial3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContext\Migrations\201612050435447_Initial4.resx">
+      <DependentUpon>201612050435447_Initial4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -11,5 +11,9 @@ namespace IIW.DataContext
     {
         public IIWDBContext() : base("SQL") { }
         public DbSet<Locations> Locations { get; set; }
+        public DbSet<Events> Events { get; set; }
+        public DbSet<Attractions> Attractions { get; set; }
+        public DbSet<Movies> Movies { get; set; }
+        public DbSet<Restaurants> Restaurants { get; set; }
     }
 }
