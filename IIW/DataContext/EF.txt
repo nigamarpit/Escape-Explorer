@@ -1,0 +1,9 @@
+﻿IIWDBContext:
+Enable-Migrations -ContextTypeName IIW.DataContext.IIWDBContext -MigrationsDirectory:DataContext\Migrations
+Add-Migration -configuration IIW.DataContext.Migrations.Configuration Initial
+Update-Database -configuration IIW.DataContext.Migrations.Configuration -Verbose
+
+ApplicationDBContext:
+Enable-Migrations -ContextTypeName IIW.DataContext.ApplicationDBContext -MigrationsDirectory:DataContext\IdentityMigrations
+Add-Migration -configuration IIW.DataContext.IdentityMigrations.Configuration Initial
+Update-Database -configuration IIW.DataContext.IdentityMigrations.Configuration -Verbose
