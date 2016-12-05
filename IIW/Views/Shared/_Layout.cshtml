@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activity Advisor</title>
+    <title>ESCAPE</title>
     @*<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">*@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     @Styles.Render("~/Content/css")
@@ -38,8 +38,19 @@
         window.appInsights=appInsights;
         appInsights.trackPageView();
     </script>
+
+    <style>
+        body{
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+        }
+        .jumbotron2 {
+            background: rgb(197, 197, 197); /* This is for ie8 and below */
+            background: rgba(197, 197, 197, 0.7); 
+        }
+    </style>
 </head>
-<body style="word-wrap:break-word;font-family: 'Open Sans', sans-serif;">
+<body style="word-wrap:break-word;font-family: 'Open Sans', sans-serif;" background="~/Content/backImage.jpg" class="img-responsive">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -48,7 +59,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Activity Advisor", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("ESCAPE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -60,11 +71,11 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content jumbotron2">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Arpit & Chinmaya</p>
         </footer>
     </div>
 

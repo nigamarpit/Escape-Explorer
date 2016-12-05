@@ -19,12 +19,89 @@
     </div>
     <div class="col-md-3"></div>
 </div>
-<div class="row">
+<div id="divResult" style="display:none">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>EXPLORE PLACES</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4"><img src="~/Content/Images/Attraction1.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-8">@(Html.Raw(TempData["AttractionDesc1"]))</div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-4"><img src="~/Content/Images/Attraction2.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-8">@(Html.Raw(TempData["AttractionDesc2"]))</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3>EXPLORE EVENTS</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4"><img src="~/Content/Images/Event1.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-8">@(Html.Raw(TempData["EventDesc1"]))</div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-4"><img src="~/Content/Images/Event2.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-8">@(Html.Raw(TempData["EventDesc2"]))</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3>EXPLORE MOVIES</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4"><img src="~/Content/Images/Movie1.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-8">@(Html.Raw(TempData["MovieDesc1"]))</div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-4"><img src="~/Content/Images/Movie2.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-8">@(Html.Raw(TempData["MovieDesc2"]))</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>EXPLORE FOOD</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4"><img src="~/Content/Images/Restaurant1.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-8">@(Html.Raw(TempData["RestaurantDesc1"]))</div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-4"><img src="~/Content/Images/Restaurant2.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-8">@(Html.Raw(TempData["RestaurantDesc2"]))</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var city = @Html.Raw(TempData["CurrentCity"]);
+            $('#CityAutoComplete').attr('value', city);
+        });
 
-</div>
-<script>
-    $('#btnSearch').click(function () {
-        var x = $('#CityAutoComplete').val();
-        alert(x);
-    });
-</script>
+        $('#btnSearch').click(function () {
+            $('#divResult').hide();
+            $('#divResult').fadeIn(3000);
+            var city = $('#CityAutoComplete').val();
+            $.ajax({
+                type: 'POST',
+                url: 'Home/GetActivities',
+                contentType: 'application/json; charset=utf-8',
+                data: { City: city, locale: 'en-US' },
+                dataType: 'json',
+                success: AjaxSucceeded,
+                error: AjaxFailed
+            });
+        });
+    </script>

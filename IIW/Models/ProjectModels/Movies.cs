@@ -14,5 +14,6 @@ namespace IIW.Models.ProjectModels
         public string MovieTheaterAddress { get; set; }
         public string MovieName { get; set; }
         public string MovieShowTimes { get; set; }
+        public string MovieImgSource { get; set; }
     }
 }
