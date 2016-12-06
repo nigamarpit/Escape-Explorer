@@ -26,12 +26,12 @@
         </div>
         <div class="panel-body">
             <div class="row">
-                <div class="col-md-4"><img src="~/Content/Images/Attraction1.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-4"><img src="@ViewBag.Urls[2]" class="img-responsive" style="width:100%"></div>
                 <div class="col-md-8">@(Html.Raw(TempData["AttractionDesc1"]))</div>
             </div>
             <hr />
             <div class="row">
-                <div class="col-md-4"><img src="~/Content/Images/Attraction2.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-4"><img src="@ViewBag.Urls[3]" class="img-responsive" style="width:100%"></div>
                 <div class="col-md-8">@(Html.Raw(TempData["AttractionDesc2"]))</div>
             </div>
         </div>
@@ -42,12 +42,12 @@
         </div>
         <div class="panel-body">
             <div class="row">
-                <div class="col-md-4"><img src="~/Content/Images/Event1.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-4"><img src="@ViewBag.Urls[0]" class="img-responsive" style="width:100%"></div>
                 <div class="col-md-8">@(Html.Raw(TempData["EventDesc1"]))</div>
             </div>
             <hr />
             <div class="row">
-                <div class="col-md-4"><img src="~/Content/Images/Event2.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-4"><img src="@ViewBag.Urls[1]" class="img-responsive" style="width:100%"></div>
                 <div class="col-md-8">@(Html.Raw(TempData["EventDesc2"]))</div>
             </div>
         </div>
@@ -58,12 +58,12 @@
         </div>
         <div class="panel-body">
             <div class="row">
-                <div class="col-md-4"><img src="~/Content/Images/Movie1.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-4"><img src="@ViewBag.Urls[4]" class="img-responsive" style="width:100%"></div>
                 <div class="col-md-8">@(Html.Raw(TempData["MovieDesc1"]))</div>
             </div>
             <hr />
             <div class="row">
-                <div class="col-md-4"><img src="~/Content/Images/Movie2.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-4"><img src="@ViewBag.Urls[5]" class="img-responsive" style="width:100%"></div>
                 <div class="col-md-8">@(Html.Raw(TempData["MovieDesc2"]))</div>
             </div>
         </div>
@@ -74,20 +74,21 @@
         </div>
         <div class="panel-body">
             <div class="row">
-                <div class="col-md-4"><img src="~/Content/Images/Restaurant1.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-4"><img src="@ViewBag.Urls[6]" class="img-responsive" style="width:100%"></div>
                 <div class="col-md-8">@(Html.Raw(TempData["RestaurantDesc1"]))</div>
             </div>
             <hr />
             <div class="row">
-                <div class="col-md-4"><img src="~/Content/Images/Restaurant2.png" class="img-responsive" style="width:100%"></div>
+                <div class="col-md-4"><img src="@ViewBag.Urls[7]" class="img-responsive" style="width:100%"></div>
                 <div class="col-md-8">@(Html.Raw(TempData["RestaurantDesc2"]))</div>
             </div>
         </div>
     </div>
     <script>
         $(document).ready(function () {
-            var city = @Html.Raw(TempData["CurrentCity"]);
-            $('#CityAutoComplete').attr('value', city);
+            //var city = @Html.Raw(TempData["CurrentCity"]);
+            //$('#CityAutoComplete').attr('value', city);
+            $('#CityAutoComplete').attr('value', 'Los Angeles');
         });
 
         $('#btnSearch').click(function () {

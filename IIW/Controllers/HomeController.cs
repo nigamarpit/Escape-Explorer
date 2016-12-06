@@ -16,6 +16,7 @@ namespace IIW.Controllers
         private ApplicationDBContext db = new ApplicationDBContext();
         public ActionResult Index()
         {
+            List<string> ImgURLs=new List<string>();
 
             int count;
             Random r;
@@ -40,10 +41,12 @@ namespace IIW.Controllers
                     s2 = iiw.Events.Where(x => x.EventId == rInt2).FirstOrDefault().EventImgSource;
                     using (WebClient client = new WebClient())
                     {
-                        string e1 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Event1.png";
-                        string e2 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Event2.png";
-                        client.DownloadFile(new Uri(s1), e1);
-                        client.DownloadFile(new Uri(s2), e2);
+                        client.DownloadString(s1);
+                        client.DownloadString(s2);
+                        //string e1 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Event1.png";
+                        //string e2 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Event2.png";
+                        //client.DownloadFile(new Uri(s1), e1);
+                        //client.DownloadFile(new Uri(s2), e2);
                         desc1 = "<label>Name : </label>" + iiw.Events.Where(x => x.EventId == rInt1).FirstOrDefault().EventName + "<br/>";
                         desc1 += "<label>Address : </label>" + iiw.Events.Where(x => x.EventId == rInt1).FirstOrDefault().EventAddress + "<br/>";
                         desc1 += "<label>URL : </label><a>" + iiw.Events.Where(x => x.EventId == rInt1).FirstOrDefault().EventURL + "</a><br/>";
@@ -54,7 +57,9 @@ namespace IIW.Controllers
                         TempData["EventDesc1"] = desc1;
                         TempData["EventDesc2"] = desc2;
                     }
-                    break;
+                    ImgURLs.Add(s1);
+                    ImgURLs.Add(s2);
+                    break;          
                 }
                 catch (Exception e)
                 {
@@ -79,10 +84,12 @@ namespace IIW.Controllers
                     s2 = s2.Substring(0, s2.Length - 3);
                     using (WebClient client = new WebClient())
                     {
-                        string e1 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Attraction1.png";
-                        string e2 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Attraction2.png";
-                        client.DownloadFile(new Uri(s1), e1);
-                        client.DownloadFile(new Uri(s2), e2);
+                        client.DownloadString(s1);
+                        client.DownloadString(s2);
+                        //string e1 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Attraction1.png";
+                        //string e2 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Attraction2.png";
+                        //client.DownloadFile(new Uri(s1), e1);
+                        //client.DownloadFile(new Uri(s2), e2);
                         desc1 = "<label>Name : </label>" + iiw.Attractions.Where(x => x.AttractionId == rInt1).FirstOrDefault().AttractionName + "<br/>";
                         desc1 += "<label>Desciption : </label>" + iiw.Attractions.Where(x => x.AttractionId == rInt1).FirstOrDefault().AttractionDescription + "<br/>";
 
@@ -91,6 +98,8 @@ namespace IIW.Controllers
                         TempData["AttractionDesc1"] = desc1;
                         TempData["AttractionDesc2"] = desc2;
                     }
+                    ImgURLs.Add(s1);
+                    ImgURLs.Add(s2);
                     break;
                 }
                 catch (Exception e)
@@ -114,10 +123,12 @@ namespace IIW.Controllers
                     s2 = iiw.Movies.Where(x => x.MovieId == rInt2).FirstOrDefault().MovieImgSource;
                     using (WebClient client = new WebClient())
                     {
-                        string e1 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Movie1.png";
-                        string e2 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Movie2.png";
-                        client.DownloadFile(new Uri(s1), e1);
-                        client.DownloadFile(new Uri(s2), e2);
+                        client.DownloadString(s1);
+                        client.DownloadString(s2);
+                        //string e1 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Movie1.png";
+                        //string e2 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Movie2.png";
+                        //client.DownloadFile(new Uri(s1), e1);
+                        //client.DownloadFile(new Uri(s2), e2);
                         desc1 = "<label>Movie Name : </label>" + iiw.Movies.Where(x => x.MovieId == rInt1).FirstOrDefault().MovieName + "<br/>";
                         desc1 += "<label>Show Times : </label>" + iiw.Movies.Where(x => x.MovieId == rInt1).FirstOrDefault().MovieShowTimes + "<br/>";
                         desc1 += "<label>Theater Name : </label>" + iiw.Movies.Where(x => x.MovieId == rInt1).FirstOrDefault().MovieTheaterName + "<br/>";
@@ -131,6 +142,8 @@ namespace IIW.Controllers
                         TempData["MovieDesc1"] = desc1;
                         TempData["MovieDesc2"] = desc2;
                     }
+                    ImgURLs.Add(s1);
+                    ImgURLs.Add(s2);
                     break;
                 }
                 catch (Exception e)
@@ -154,10 +167,12 @@ namespace IIW.Controllers
                     s2 = iiw.Restaurants.Where(x => x.RestaurantId == rInt2).FirstOrDefault().RestaurantImage;
                     using (WebClient client = new WebClient())
                     {
-                        string e1 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Restaurant1.png";
-                        string e2 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Restaurant2.png";
-                        client.DownloadFile(new Uri(s1), e1);
-                        client.DownloadFile(new Uri(s2), e2);
+                        client.DownloadString(s1);
+                        client.DownloadString(s2);
+                        //string e1 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Restaurant1.png";
+                        //string e2 = AppDomain.CurrentDomain.BaseDirectory + "/Content/Images/Restaurant2.png";
+                        //client.DownloadFile(new Uri(s1), e1);
+                        //client.DownloadFile(new Uri(s2), e2);
                         desc1 = "<label>Restaurant Name : </label>" + iiw.Restaurants.Where(x => x.RestaurantId == rInt1).FirstOrDefault().RestaurantName + "( <b>" + iiw.Restaurants.Where(x => x.RestaurantId == rInt1).FirstOrDefault().RestaurantRating.ToString() + "</b>)<br/>";
                         desc1 += "<label>Cuisine : </label>" + iiw.Restaurants.Where(x => x.RestaurantId == rInt1).FirstOrDefault().RestaurantCuisine + "<br/>";
                         desc1 += "<label>Address : </label>" + iiw.Restaurants.Where(x => x.RestaurantId == rInt1).FirstOrDefault().RestaurantAddress + "<br/>";
@@ -171,6 +186,8 @@ namespace IIW.Controllers
                         TempData["RestaurantDesc1"] = desc1;
                         TempData["RestaurantDesc2"] = desc2;
                     }
+                    ImgURLs.Add(s1);
+                    ImgURLs.Add(s2);
                     break;
                 }
                 catch (Exception e)
@@ -178,6 +195,8 @@ namespace IIW.Controllers
                     continue;
                 }
             }
+
+            ViewBag.Urls = ImgURLs;
 
             string json = new WebClient().DownloadString("http://ip-api.com/json");
             JObject y = JObject.Parse(json);

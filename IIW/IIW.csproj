@@ -707,6 +707,8 @@
     <None Include="Properties\PublishProfiles\ActivityAdvisor - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\EscapeExplore - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\EscapeExplore - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\EscapeExplorer - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\EscapeExplorer - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
